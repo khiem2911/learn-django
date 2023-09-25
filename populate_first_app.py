@@ -6,7 +6,7 @@ django.setup()
 
 ## FAKE POP SCRIPT
 import random
-from first_app.models import AccessRecord,Topic,Webpage
+from first_app.models import AccessRecord,Topic,Webpage,User
 from faker import Faker
 
 fakegen = Faker()
@@ -22,10 +22,16 @@ def populate(N=5):
         fake_url = fakegen.url()
         fake_date = fakegen.date()
         fake_name = fakegen.company()
-        print(entry)
         webpg = Webpage.objects.get_or_create(topic=top,url=fake_url,name=fake_name)[0]
         acc_rec = AccessRecord.objects.get_or_create(name=webpg,date=fake_date)[0]
+def populateUser(N=5):
+    for entry in range(N):
+        fake_name= fakegen.name().split()
+        fake_first_name = fake_name[0]
+        fake_last_name = fake_name[1]
+        fake_email= fakegen.email()
+        users = User.objects.get_or_create(Last_Name=fake_last_name,Email=fake_email,First_Name=fake_first_name)[0]
 if __name__ == '__main__':
     print("populating scripts!")
-    populate(20)
+    populateUser(20)
     print("populating complete!")

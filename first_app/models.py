@@ -18,4 +18,11 @@ class AccessRecord(models.Model):
     date = models.DateField()
 
     def __str__(self):
-        return self.date
+        return self.date.__str__()
+class User(models.Model):
+    First_Name = models.CharField(max_length=264)
+    Last_Name = models.CharField(max_length=264)
+    Email = models.EmailField(max_length=264,unique=True)
+
+    def __str__(self) -> str:
+        return self.Email
