@@ -1,0 +1,26 @@
+body{
+    background-color: black;
+}
+.container{
+    background-color: white;
+    max-width: 70rem;
+    width: 30%;
+    padding: 4rem;
+    margin: 20rem auto;
+    text-align: center;
+    box-shadow: 4px 7px 8px purple;
+    animation: animated 1s ease-out;
+}
+.container p{
+    font-size: 20px;
+}
+@keyframes animated {
+    from {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
