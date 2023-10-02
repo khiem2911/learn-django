@@ -15,12 +15,12 @@
         <tbody>
             {% for acc in access_users %}
             <tr>
-                <td>{{acc.Last_Name}}</td>
-                <td>{{acc.Email}}</td>
+                <td>{{acc.name}}</td>
+                <td>{{acc.email}}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
     {% endif %}
-</body>
+    <a href="/users/form">Sign up</a></body>
 </html>

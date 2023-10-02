@@ -26,3 +26,10 @@ class User(models.Model):
 
     def __str__(self) -> str:
         return self.Email
+class FormUser(models.Model):
+    name = models.CharField(max_length=264)
+    email = models.EmailField(max_length=264,unique=True)
+    text = models.CharField(max_length=264)
+
+    def __str__(self) -> str:
+        return self.email
